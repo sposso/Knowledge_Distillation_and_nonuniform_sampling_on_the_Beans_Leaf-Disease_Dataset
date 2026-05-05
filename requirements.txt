@@ -1,0 +1,17 @@
+# Core deep-learning stack
+torch>=2.1
+torchvision>=0.16
+
+# Hugging Face stack
+transformers>=4.40
+datasets>=2.18
+accelerate>=0.27
+safetensors>=0.4
+evaluate>=0.4
+trackio
+
+# Numerics / metrics / plotting
+numpy
+scipy
+scikit-learn
+matplotlib

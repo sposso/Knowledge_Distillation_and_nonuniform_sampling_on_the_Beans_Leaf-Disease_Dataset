@@ -1,0 +1,34 @@
+{
+  "run_dir": "my-awesome-model-sampler-sgd-s3",
+  "best_checkpoint": "my-awesome-model-sampler-sgd-s3/checkpoint-660",
+  "best_val_accuracy_during_training": 0.9924812030075187,
+  "temperature": 1.0,
+  "lambda_param": 0.5,
+  "label_names": [
+    "angular_leaf_spot",
+    "bean_rust",
+    "healthy"
+  ],
+  "student_metrics": {
+    "train": {
+      "accuracy": 0.9961315280464217,
+      "f1_macro": 0.9961435494623906,
+      "n": 1034
+    },
+    "validation": {
+      "accuracy": 0.9849624060150376,
+      "f1_macro": 0.9850016852039096,
+      "n": 133
+    },
+    "test": {
+      "accuracy": 0.9765625,
+      "f1_macro": 0.9767158521727359,
+      "n": 128
+    }
+  },
+  "teacher_test_baseline": {
+    "accuracy": 0.9375,
+    "f1_macro": 0.9379147657966996,
+    "n": 128
+  }
+}
