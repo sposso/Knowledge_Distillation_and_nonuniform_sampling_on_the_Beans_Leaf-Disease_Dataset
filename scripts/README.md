@@ -26,7 +26,8 @@ scripts/
 │
 └── figures/                plot generators
     ├── make_figures.py             class distribution, samples per class, loss curves
-    └── sampler_final.py            paper Fig. 1 (sampler qualitative)
+    ├── sampler_final.py            paper Fig. 1 (sampler qualitative)
+    └── logits_distribution.py      KDE of student softmax outputs across the T sweep
 ```
 
 ## Common invocations
@@ -69,4 +70,9 @@ CUDA_VISIBLE_DEVICES="" python scripts/figures/sampler_final.py \
     --checkpoint my-awesome-model-sampler-sgd-s3/checkpoint-660 \
     --indices 21,27,36,52,74 --saliency_scale 3 \
     --out Figures/sampler_final.png
+
+# Softmax-output distribution per T (deployment T=1)
+CUDA_VISIBLE_DEVICES=0 python scripts/figures/logits_distribution.py \
+    --sweep_dir sweep_T_imagenet --split test \
+    --out Figures/logits_distribution_imagenet.png
 ```

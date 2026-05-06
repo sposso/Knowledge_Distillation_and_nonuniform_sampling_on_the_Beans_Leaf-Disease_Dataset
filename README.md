@@ -154,6 +154,16 @@ CUDA_VISIBLE_DEVICES="" python scripts/figures/sampler_final.py \
     --checkpoint my-awesome-model-sampler-sgd-s3/checkpoint-660 \
     --indices 21,27,36,52,74 --saliency_scale 3 \
     --out Figures/sampler_final.png
+
+# Softmax-output behaviour of the per-T best students (deployment T = 1)
+CUDA_VISIBLE_DEVICES=0 python scripts/figures/logits_distribution.py \
+    --sweep_dir sweep_T_imagenet --split test \
+    --out Figures/logits_distribution_imagenet.png
+# Or, on the random-init batch-32 sweep that backs Table 1:
+CUDA_VISIBLE_DEVICES=0 python scripts/figures/logits_distribution.py \
+    --run_dirs sweep_T/T1_b32 sweep_T/T2_b32 sweep_T/T3_b32 sweep_T/T4_b32 my-awesome-model \
+    --temperatures 1 2 3 4 5 --split test \
+    --out Figures/logits_distribution_randominit.png
 ```
 
 ## Building the paper
