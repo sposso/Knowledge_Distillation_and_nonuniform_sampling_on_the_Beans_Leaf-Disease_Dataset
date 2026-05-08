@@ -7,12 +7,7 @@ student.
                                                               student logits
                                           (teacher sees the standard uniform 224x224)
 
-Run on both local GPUs from the project root:
-    NCCL_P2P_DISABLE=1 NCCL_IB_DISABLE=1 OMP_NUM_THREADS=4 \\
-        torchrun --standalone --nproc_per_node=2 \\
-        scripts/training/main_with_sampler.py \\
-        --temperature 1 --per_device_train_batch_size 32 \\
-        --output_dir my-awesome-model-sampler --num_train_epochs 30
+
 """
 
 from __future__ import annotations
