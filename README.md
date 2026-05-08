@@ -62,7 +62,7 @@ NCCL_IB_DISABLE=1` to avoid NCCL P2P errors.
 
 All commands assume the project root as the working directory.
 
-### Table 1 -- temperature sweep (random-init student, validation set)
+### Table 1 -- temperature sweep
 
 ```bash
 python scripts/sweeps/sweep_temperature.py \
