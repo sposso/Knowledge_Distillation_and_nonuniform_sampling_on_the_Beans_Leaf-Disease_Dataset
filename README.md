@@ -28,27 +28,23 @@ The distilled student with the saliency sampler exceeds the teacher by
 
 ```
 .
+├── .gitignore
+├── Figures/              paper figures shipped with the report
 ├── paper/                LaTeX source (main.tex + references.bib)
+├── results/              per-run train/val/test acc + macro-F1 (md + json)
 ├── scripts/
+│   ├── README.md         script documentation + common invocations
 │   ├── training/         torchrun entry points
 │   │   ├── main.py                 distillation, ViT -> MobileNetV2
 │   │   ├── train_baseline.py       MobileNetV2, no teacher
 │   │   └── main_with_sampler.py    distillation + Recasens saliency sampler
 │   ├── saliency/         SaliencySampler module + truncated MobileNetV3-Small
-│   ├── evaluation/
-│   │   ├── compute_results.py      train/val/test acc + macro-F1 (no-sampler runs)
-│   │   └── eval_sampler.py         same, for sampler-equipped runs
-│   ├── sweeps/
-│   │   └── sweep_temperature.py    T in {1..5} sweep + summary md/json/png
-│   └── figures/
-│       ├── make_figures.py         class distribution, per-class samples, loss curves
-│       └── sampler_final.py        paper-style sampler visualization (Fig. 1)
-├── results/              per-run train/val/test acc + macro-F1 (md + json)
-├── Figures/              paper figures shipped with the report
-├── docs/                 dataset + model notes
+│   ├── evaluation/       checkpoint -> markdown + JSON report
+│   ├── sweeps/           hyperparameter orchestration
+│   └── figures/          plot generators
 ├── requirements.txt
 ├── LICENSE               MIT
-└── .gitignore            excludes checkpoints, logs, sweep dirs, caches
+└── README.md
 ```
 
 Training outputs (`my-awesome-model*/`, `baseline*/`, `sweep_T*/`) are
