@@ -30,7 +30,6 @@ The distilled student with the saliency sampler exceeds the teacher by
 .
 ├── .gitignore
 ├── Figures/              paper figures shipped with the report
-├── results/              per-run train/val/test acc + macro-F1 (md + json)
 ├── scripts/
 │   ├── README.md         script documentation + common invocations
 │   ├── training/         torchrun entry points
