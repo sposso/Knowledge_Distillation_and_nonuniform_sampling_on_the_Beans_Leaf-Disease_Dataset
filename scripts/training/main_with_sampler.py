@@ -42,8 +42,7 @@ from scripts.saliency import SaliencySampler, saliency_network_mobilenetv3_small
 
 
 class StudentWithSampler(nn.Module):
-    """Wraps the HF MobileNetV2 student behind the saliency sampler and exposes
-    a forward signature the HF Trainer can drive directly."""
+   
 
     def __init__(
         self,
