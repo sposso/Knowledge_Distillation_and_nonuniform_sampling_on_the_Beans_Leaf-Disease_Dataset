@@ -97,10 +97,7 @@ python scripts/evaluation/compute_results.py \
 ### Table 3 -- ImageNet-init student ablation
 
 ```bash
-# Sweep T for the ImageNet-init student
-python scripts/sweeps/sweep_temperature.py \
-    --sweep_dir sweep_T_imagenet --out_tag imagenet \
-    --student_pretrained google/mobilenet_v2_1.0_224
+
 
 # Headline imagenet-init runs (no distill / distill at T=1)
 NCCL_P2P_DISABLE=1 NCCL_IB_DISABLE=1 torchrun --standalone --nproc_per_node=2 \
